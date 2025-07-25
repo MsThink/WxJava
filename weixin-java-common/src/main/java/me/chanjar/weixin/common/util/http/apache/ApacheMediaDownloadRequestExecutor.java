@@ -58,7 +58,7 @@ public class ApacheMediaDownloadRequestExecutor extends BaseMediaDownloadRequest
         }
       }
 
-      String fileName = new HttpResponseProxy(response).getFileName();
+      String fileName = HttpResponseProxy.from(response).getFileName();
       if (StringUtils.isBlank(fileName)) {
         fileName = String.valueOf(System.currentTimeMillis());
       }
