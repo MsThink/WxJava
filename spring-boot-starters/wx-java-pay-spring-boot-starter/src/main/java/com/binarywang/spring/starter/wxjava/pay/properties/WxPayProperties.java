@@ -65,6 +65,11 @@ public class WxPayProperties {
   private String notifyUrl;
 
   /**
+   * 退款结果异步回调地址，通知url必须为直接可访问的url，不能携带参数
+   */
+  private String refundNotifyUrl;
+
+  /**
    * 微信支付分回调地址
    */
   private String payScoreNotifyUrl;
@@ -105,5 +110,15 @@ public class WxPayProperties {
    * 例如：http://proxy.company.com:8080
    */
   private String apiHostUrl;
+
+  /**
+   * 是否将全部v3接口的请求都添加Wechatpay-Serial请求头，默认不添加
+   */
+  private boolean strictlyNeedWechatPaySerial = false;
+
+  /**
+   * 是否完全使用公钥模式(用以微信从平台证书到公钥的灰度切换)，默认不使用
+   */
+  private boolean fullPublicKeyModel = false;
 
 }
